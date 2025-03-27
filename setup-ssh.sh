@@ -1,0 +1,1 @@
+cp /root/.ssh/authorized_keys /home/$MY_USER/.ssh
