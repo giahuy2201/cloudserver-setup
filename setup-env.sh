@@ -1,1 +1,0 @@
-export MY_USER=giahuy

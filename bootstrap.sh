@@ -6,8 +6,8 @@ git clone https://github.com/giahuy2201/cloudserver-setup.git
 # Run scripts
 cd cloudserver-setup && \
 chmod +x *.sh && \
-./install-packages.sh
-./setup-env.sh && \
+./install-packages.sh && \
+source ./env.sh && \
 ./setup-user.sh && \
 # 
 su $MY_USER && \
