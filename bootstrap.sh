@@ -1,9 +1,10 @@
 # Assume logged in as root
 apt update && \
 apt install git -y && \
-git clone https://github.com/giahuy2201/cloudserver-setup.git && \
-cd cloudserver-setup && \
+git clone https://github.com/giahuy2201/cloudserver-setup.git
+
 # Run scripts
+cd cloudserver-setup && \
 chmod +x *.sh && \
 ./install-packages.sh
 ./setup-env.sh && \
