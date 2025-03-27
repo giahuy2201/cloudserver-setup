@@ -1,5 +1,5 @@
 # cloudserver-setup
 
 ```sh
-curl https://github.com/giahuy2201/cloudserver-setup/raw/refs/heads/main/bootstrap.sh | sh
+curl https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/bootstrap.sh | sh
 ```
