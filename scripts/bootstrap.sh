@@ -1,7 +1,7 @@
 # Assume logged in as root
 echo "------------ Set up environment variables ------------"
 MY_USER=giahuy
-USER_SCRIPT=https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/bootstrap-user.sh
+USER_SCRIPT=https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/bootstrap-user.sh
 echo "------------ Upgrade and install packages ------------"
 apt update && \
 apt install neovim neofetch git screen btop htop stow -y
