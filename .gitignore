@@ -1,0 +1,4 @@
+.DS_Store
+inventory.yml
+/host_vars/*
+!host_vars/newserver.yml
