@@ -2,6 +2,7 @@
 - hosts: '{{ target_host | default("newserver") }}'
 
   tasks:
+    - include_tasks: tasks/install-packages.yml
     - name: Set hostname to {{ new_hostname }}
       become: yes
       hostname:
@@ -12,5 +13,3 @@
         dest: '{{ path_dest_config }}'
         recursive: yes
       delegate_to: localhost
-    - include_tasks: tasks/compose-up.yml
-      when: run_compose_up
