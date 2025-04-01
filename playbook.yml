@@ -13,3 +13,4 @@
         recursive: yes
       delegate_to: localhost
     - include_tasks: tasks/compose-up.yml
+      when: run_compose_up
