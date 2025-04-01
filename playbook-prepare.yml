@@ -18,3 +18,10 @@
         dest: '{{ path_dest_config }}'
         recursive: yes
       delegate_to: localhost
+    - name: Change config directory ownership to {{ new_username }}
+      file:
+        path: '{{ path_dest_config }}'
+        owner: '{{ new_uid }}'
+        group: '{{ new_gid }}'
+        state: directory
+        recurse: yes
