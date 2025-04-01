@@ -1,0 +1,6 @@
+all:
+  hosts:
+    newserver:
+      ansible_host: newserver.lan
+      ansible_user: giahuy
+      ansible_ssh_private_key_file: ~/.ssh/newserver
