@@ -1,7 +1,0 @@
----
-- name: Install essential packages
-  become: true
-  package:
-    name: "{{ package_needed }}"
-    state: present
-    update_cache: yes
