@@ -1,0 +1,5 @@
+---
+- hosts: '{{ target_host }}'
+
+  tasks:
+    - include_tasks: tasks/run-compose.yml
