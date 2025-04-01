@@ -7,9 +7,10 @@
     recurse: true
   register: found_compose_files
 
-- name: Upgrade and launch all Docker stacks
+- name: Run all Docker stacks - {{ state | default('present') }}
   community.docker.docker_compose_v2:
     project_src: '{{ item.path | dirname }}'
     pull: always
     remove_orphans: true
+    state: "{{ state | default('present') }}"
   loop: "{{ found_compose_files.files }}"

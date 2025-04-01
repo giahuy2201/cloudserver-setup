@@ -1,0 +1,12 @@
+---
+- hosts: '{{ target_host }}'
+
+  tasks:
+    - include_tasks: tasks/run-compose.yml
+      vars:
+        state: absent
+    - name: Remove config directory
+      become: true
+      file:
+        path: '{{ path_dest_config }}'
+        state: absent
