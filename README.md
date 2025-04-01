@@ -1,13 +1,23 @@
 # cloudserver-setup
 
-## Scripts
+## 1. Run bootstrapping script
 
-Quick setup
+Log in to new server as root and run script to set up user
+
 ```sh
 curl https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/bootstrap.sh | sh
 ```
 
-Enable passwordless sudo
+## 2. Install docker
+
 ```sh
-curl https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/set-nopasswd.sh | sh
+curl https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/install-docker-debian.sh | sh
+```
+
+## 3. Use ansible to upload docker config
+
+Customize server configs in `host_vars/newserver.yml` and run ansible playbook
+
+```sh
+ansible-playbook playbook.yml -i inventory.yml -K
 ```
