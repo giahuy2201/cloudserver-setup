@@ -1,0 +1,4 @@
+# path_mount_config: /mnt/Config
+path_mount_config: /Volumes/Config
+path_dest_config: '~/config'
+path_docker_stacks: '{{ path_dest_config }}/stacks'
