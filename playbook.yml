@@ -2,9 +2,12 @@
 - hosts: '{{ target_host | default("newserver") }}'
 
   tasks:
+    - name: Set hostname to {{ new_hostname }}
+      hostname:
+        name: '{{ new_hostname }}'
     - name: Push config to server
       synchronize:
-        src: '{{ path_mount_config }}/{{ inventory_hostname }}'
+        src: '{{ path_mount_config }}/{{ new_hostname }}'
         dest: '{{ path_dest_config }}'
         recursive: yes
       delegate_to: localhost
