@@ -4,6 +4,7 @@
     paths: '{{ path_docker_stacks }}'
     patterns: "compose.yml"
     file_type: file
+    recurse: true
   register: found_compose_files
 
 - name: Upgrade and launch all Docker stacks
