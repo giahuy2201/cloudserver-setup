@@ -20,5 +20,5 @@ Customize server configs in `host_vars/newserver.yml` and run ansible playbook
 
 ```sh
 ansible-galaxy collection install -r requirements.yml
-ansible-playbook playbook.yml -i inventory.yml
+ansible-playbook playbook-prepare.yml -i inventory.yml
 ```
