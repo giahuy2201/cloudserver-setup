@@ -1,0 +1,18 @@
+path_mount_config: /mnt/Config
+path_dest_config: '/home/{{ new_username }}/config'
+path_docker_stacks: '{{ path_dest_config }}/stacks'
+
+package_needed:
+  - btop
+  - git
+  - htop
+  - neofetch
+  - neovim
+  - rsync
+  - screen
+  - stow
+
+new_hostname: 'cloudserver'
+new_username: giahuy
+new_uid: 1000
+new_gid: 1000
