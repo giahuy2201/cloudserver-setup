@@ -11,6 +11,8 @@ package_needed:
   - rsync
   - screen
   - stow
+  - tree
+  - net-tools
 
 new_hostname: 'cloudserver'
 new_username: giahuy
