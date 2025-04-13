@@ -12,6 +12,11 @@
       become: yes
       hostname:
         name: '{{ new_hostname }}'
+    - name: Create directory {{ path_dest_config }}
+      file:
+        path: '{{ path_dest_config }}'
+        state: directory
+        mode: '0755'
     - name: Push config to server
       synchronize:
         src: '{{ path_mount_config }}/{{ new_hostname }}/'
