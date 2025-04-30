@@ -6,7 +6,8 @@ echo "------------ Upgrade and install packages ------------"
 apt update && \
 apt install neovim neofetch git screen btop htop stow rsync -y
 echo "------------ Set up user with passwordless sudo ------------"
-useradd -m -s "$(which bash)" -u 1000 -g 1000 $MY_USER
+groupadd -g 1000 $MY_USER && \
+useradd -m -s "$(which bash)" -u 1000 -g $MY_USER $MY_USER
 apt install sudo -y && \
 echo "$MY_USER ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/$MY_USER
 echo "------------ Bootstrap as user ------------"
