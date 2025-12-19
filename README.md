@@ -1,22 +1,22 @@
 # cloudserver-setup
-My routines to migrate cloud-hosted servers from one provider to another. To simplify, the whole process
+My routines to migrate cloud-hosted servers
 
-## 0. Run provider-specific routine
-- Create/Rename your user with uid:gid 1000:1000
-- Disable PasswordAuthentication
-- Copy ssh pubkeys
+## 0. Wrap up old VPS
+- Copy `authorized_keys`
 - Back up ufw rules https://linuxconfig.org/how-to-backup-and-restore-ufw-on-linux
 - Back up wazuh-agent
+- ~~Back up docker data `~/config`~~ (now handled by Syncthing)
+- Docker compose down
 
-## 1. Run bootstrapping script
+## 1. Bootstrap new VPS
 
-Log in to new server as root and run script to set up user
+Log in as root
 
 ```sh
 curl https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/bootstrap.sh | sh
 ```
 
-## 2. Install docker
+Install docker using official script
 
 ```sh
 curl -fsSL https://get.docker.com | sh
@@ -24,7 +24,7 @@ sudo systemctl enable --now docker
 sudo usermod -a -G docker $USER
 ```
 
-## 3. Use ansible to upload docker config
+## 2. Upload docker data using Ansible
 
 Customize server configs in `host_vars/newserver.yml` and `inventory.yml` then run ansible playbook
 
