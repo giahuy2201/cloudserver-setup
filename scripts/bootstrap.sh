@@ -4,7 +4,7 @@ MY_USER=giahuy
 USER_SCRIPT=https://raw.githubusercontent.com/giahuy2201/cloudserver-setup/refs/heads/main/scripts/bootstrap-user.sh
 echo "------------ Upgrade and install packages ------------"
 apt update && \
-apt install neovim git screen btop htop iftop stow rsync -y
+apt install neovim git screen btop htop iftop stow rsync tree net-tools ufw -y
 echo "------------ Set up user with passwordless sudo ------------"
 groupadd -g 1000 $MY_USER && \
 useradd -m -s "$(which bash)" -u 1000 -g $MY_USER $MY_USER
