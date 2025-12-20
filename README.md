@@ -24,11 +24,16 @@ sudo systemctl enable --now docker
 sudo usermod -a -G docker $USER
 ```
 
-## 2. Upload docker data using Ansible
+## 2. Restore system configs
 
-Customize server configs in `host_vars/newserver.yml` and `inventory.yml` then run ansible playbook
+## 3. Restore Docker stacks
 
 ```sh
 ansible-galaxy collection install -r requirements.yml
 ansible-playbook playbook-prepare.yml -i inventory.yml
 ```
+
+## 4. Clean up old VPS
+
+- Remove wazuh-agent config
+- Remove the docker data
