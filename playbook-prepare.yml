@@ -2,12 +2,6 @@
 - hosts: '{{ target_host | default("newserver") }}'
 
   tasks:
-    - name: Install needed packages
-      become: true
-      package:
-        name: "{{ package_needed }}"
-        state: present
-        update_cache: yes
     - name: Set hostname to {{ new_hostname }}
       become: yes
       hostname:
