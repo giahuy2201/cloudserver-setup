@@ -4,7 +4,7 @@ My routines to migrate cloud-hosted servers
 ## 0. Wrap up old VPS
 - Copy `authorized_keys`
 - Back up ufw rules https://linuxconfig.org/how-to-backup-and-restore-ufw-on-linux
-- Back up wazuh-agent
+- Back up wazuh-agent https://documentation.wazuh.com/current/migration-guide/creating/wazuh-agent.html
 - ~~Back up docker data `~/config`~~ (now handled by Syncthing)
 - Docker compose down
 
